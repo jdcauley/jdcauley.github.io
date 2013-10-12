@@ -1,0 +1,10 @@
+each post, slug in public.posts.data
+  
+  h2
+    a(href="#{ site_url }/posts/#{ slug }") #{ post.post_title }
+  time #{ post.date }
+  !{ partial("posts/" + slug) }
+
+// section
+  .container
+    #feed.row
