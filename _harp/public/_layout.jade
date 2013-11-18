@@ -1,31 +1,19 @@
 !!!
 html(lang="en")
   head
-    meta(charset='utf-8')
+    meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title #{title}
+    title #{ site_title }
     link(rel="stylesheet", href="/assets/css/app.css")
-     
+    link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
-    header
-      .container
-        a(href="/"): img.profile-img(src="/assets/img/me.jpeg", alt="me")
     article#content
-      .container
+      .container.main-content
         .row
           .col-sm-8.main
-              != yield
-          .col-sm-4.aside
-            h2.brand
-              a(href="/") #{title} 
-            p I live in Greensboro, NC where I work crafting a better web
-            p.small You can find me 
-              a(href="http://twitter.com/#{twitter}") #{twitter}
-    footer
-      .container
-        .row
-          .col-sm-12
-            p.copyright.pull-right &copy; #{title} 2013
-    
-    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
-    script(src="/assets/js/app.js")
+            != yield
+            != partial("_partials/comments")
+          .col-sm-offset-1.col-sm-3.aside
+            != partial("_partials/aside")
+    hr
+    != partial("_partials/footer")

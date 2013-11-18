@@ -1,12 +1,12 @@
-# Harp's Blog Boilerplate
+# Harp’s Blog Boilerplate
 
-_This is a boilerplate to use with the [Harp Platform](http://harp.io/) and [Harp APF](https://github.com/sintaxi/harp) (an open source Asset Pipeline Framework powered by NodeJS)_
+_This is a boilerplate to use with the [Harp Platform](http://harp.io/) and/or the [Harp Server](http://harpjs.com/) (a static web server with built-in pre-processing powered by NodeJS)_
 
 ## Index
 
 - [How to use it?](#how-to-use-it)
-    - [On the Harp Platform](#on-the-harp-platform)
     - [On your own computer](#on-your-own-computer)
+    - [On the Harp Platform](#on-the-harp-platform)
 - [Controlling your content](#controlling-your-content)
 - [Adding new posts](#adding-new-posts)
 - [Adding new pages](#adding-new-pages)
@@ -21,32 +21,32 @@ _This is a boilerplate to use with the [Harp Platform](http://harp.io/) and [Har
 
 ## How to use it?
 
-### On the Harp Platform
-
-1. Login/Signup to the [Harp Platform](http://harp.io/)
-2. Create a new application
-3. Choose "Blog Boilerplate" as your starting point
-4. Start your application
-5. Open and edit the files in your Dropbox
-
 ### On your own computer
 
-1. [Install Harp APF](http://docs.harp.io/apf/install-update) on your computer
+1. [Install Harp Server](http://harpjs.com/docs/environment/install) on your computer
 2. Open your terminal and start a new project:
 
 ````
 $ git clone git@github.com:harp-boilerplates/hb-blog.git my-blog
 $ cd my-blog
-$ harp server
+$ harp server -p 9966
 ````
 
 Go to [http://localhost:9966](http://localhost:9966/) from your browser to see your website.
+
+### On the Harp Platform
+
+1. Login to the [Harp Platform](http://harp.io/)
+2. Create a new application
+3. Choose __Blog Boilerplate__ as your starting point
+4. Start your application
+5. Open and edit the files in your Dropbox
 
 ## Controlling your content
 
 Harp brings you back to the basics of the web. Always keep in mind that your directory structure and file names are your URL paths.
 
-What that means is that creating a new page is as simple as creating a new file a throwing some content in it.
+Creating a new page is as simple as creating a new file and writing content in it.
 
 ### `public/posts`
 
@@ -54,103 +54,112 @@ This is where your posts and their content live.
 
 ### `public/_layout.jade`
 
-Indicates the layout of your site, including header, footer and sidebar. External scripts or stylesheets are included in this file. Global elements belong here as well (i.e.: header, nav, sidebar, etc.)
+The layout of your site, including header, footer and sidebar. External scripts or stylesheets are included in this file. Global elements belong here as well (i.e.: header, nav, sidebar, etc.)
 
 ### `public/index.jade`
 
 This is the default page when you visit your domain (i.e.: `http://localhost:9966/`). Here we build the loop that goes through your posts and shows them in the front page.
 
-### `public/_bootstrap`
+### `public/assets/css/app.less`
 
-[Twitter Bootstrap](http://twitter.github.com/bootstrap/) files. This blog boilerplate was built so you can simply replace the `public/_bootstrap` directory whenever you want to upgrade to a new version of Twitter Bootstrap.
-
-You shouldn't modify this directories unless you want to upgrade or downgrade the library.
-
-### `public/fontawesome`
-
-[FontAwesome](http://fortawesome.github.com/Font-Awesome/) files. Same as Twitter Boostrap, this blog boilerplate was built so you can simply replace the `public/fontawesome` directory with a newer or older version of FontAwesome.
-
-You shouldn't modify this directories unless you want to upgrade or downgrade the library.
-
-### `public/css`
-
-This is the place where your custom CSS should live.
+This is the place where your blog CSS should live.
 
 ## Adding new posts
 
-__1__. Create a new `.jade`, `.html` or `.md` file under `public/posts/`
+__1__. Create a new file (`.jade`, `.ejs`, `.html` or `.md`) in the `public/posts/` directory
 
 ````
-touch public/posts/kittens.html
+$ touch public/posts/kittens.html
 ````
 
-__2__. Enter your post content in the file you just created
+__2__. Enter your post content in the file you just created:
 
-__file public/posts/kittens.html:__
+_public/posts/kittens.html:_
+
 ````
 <h1><a href="/posts/kittens">I love kittens!</a></h1>
 <p>This is my first post using Harp!</p>
 ````
 
-__3__. Open `public/_data.json` and add your new post data
+__3__. Open `public/posts/_data.json` and add your new post data:
 
 ````
 {
-  "posts": {
-    "kittens": {         <-- post's slug
-      "type": "post",    <-- 'post' or 'quote'
-      "date": {
-        "day": "18",
-        "month": "feb",
-        "year": "2013"
-      }
-    }
-    ...
+  ...                        <-- other blog posts
+  "kittens": {               <-- post slug (file name without extension)
+    "title": "Cute Kittens"  <-- post title
   }
+  ...                        <-- other blog posts
 }
 ````
 
 ## Adding new pages
 
-__1__. Create a new file in public (actually, it can be anywhere you want)
+__1__. Create a new file inside the `public` directory:
 
 ````
-touch public/about.html
+$ touch public/about.html
 ````
 
 __2__. Enter the page content in the newly created file
 
-__file public/about.html:__
+_public/about.html:_
+
 ````
 <h1>About me</h1>
-<p>I love the fotoshopz and taking pictures of foods</p>
+<p>I love fotoshapz and taking pictures of foods</p>
 ````
 
-__3__. Your can now access your page in the browser. I.e.: `http://localhost:9966/about`
+__3__. Your can now access your page in your browser. I.e.: `http://localhost:9966/about`
 
-## Migrating from a different platform
+## Migrating from a WordPress blog
 
-### WordPress
+If you’re planning to move your WordPress site to Harp, I’d recommend cloning it using wget or curl:
 
-If you're planning to move your WordPress site, I'd recommend cloning it using wget or curl, i.e.:
+This one-line terminal command will create a static replica of __yourwebsite.com__ in your computer, it’ll fix all the links to work locally and download all the necessary assets (images, javascript, css and other files):
 
 ```
 $ wget --recursive --no-clobber --page-requisites --html-extension --convert-links yourwebsite.com
 ```
 
-Optionally, you can use [wp2static](https://github.com/jorgepedret/wp2static), a migration tool for WordPress. I created it in a couple of hours, so it's by no means a finished tool, but it'll get you half way there.
+## Enabling/Disabling Comments
 
-### Tumblr
+This blog boilerplate makes it really easy to enable your visitors to leave comments on your blog posts.
 
-TODO
+Open the `/harp.json` file and look for the disqus section. It should look something like this:
+
+```
+...
+"disqus": {
+  "enabled": false,
+  "shortname": ""
+}
+...
+```
+
+In the disqus configuration there are two configurable keys:
+
+`enabled`: can be `true` or `false`. Make it true to display comments and false to disable them. Make sure the value is not wrapped in quotes like this `"false"`, otherwise it will still show the comments.
+
+`shortname`: this is your shortname assigned by Disqus. [Signup for Disqus](https://disqus.com/admin/signup/) and get your own shortname, then enter it as a string (with wrapping double quotes) as the shortname value.
+
+This is what it looks like when it’s enabled:
+
+```
+...
+"disqus": {
+  "enabled": true,
+  "shortname": "jorgepedret"
+}
+...
+```
 
 ## TODO
-- Integrate [discuss](http://disqus.com/) for comments
 - Create sitemap.xml for improving SEO
 
 ## Support
 
-Please [create an issue](https://github.com/harp-boilerplates/hb-blog/issues) on github's bug tracker. Feedback and bug reports are greatly appreciated.
+Please [create an issue](https://github.com/harp-boilerplates/hb-blog/issues) on github’s bug tracker. Feedback and bug reports are greatly appreciated.
 
 ## License
 

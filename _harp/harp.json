@@ -1,9 +1,16 @@
 {
-  "domains": ["jordancauley.com"],
+  "domains": [""],
   "globals": {
-    "title": "Jordan Cauley",
-    "name": "Jordan Cauley",
-    "twitter": "@jdcauley",
-    "site_url": "http://jordancauley.com"
+    "site_title": "My Harp Blog",
+    "twitter": "HarpPlatform",
+    "site_url": "http://jdcauley.github.io",
+    "disqus": {
+      "enabled": false,
+      "shortname": ""
+    },
+    "chatterli": {
+      "enabled": true,
+      "container": ".main"
+    }
   }
 }

@@ -2,10 +2,9 @@
 rss(version='2.0')
   channel  
     title #{ title }
-    twitter #{ twitter }
     link #{ site_url }/
-    each post, slug in public.posts.data
+    each post, slug in public.posts._data
       item
         title #{ post.title }
         link #{ site_url }/posts/#{ slug }
-        content <![CDATA[!{ partial("posts/" + slug) }]]>
+        description <![CDATA[!{ partial("posts/" + slug) }]]>
