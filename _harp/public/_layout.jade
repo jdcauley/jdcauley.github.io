@@ -17,3 +17,6 @@ html(lang="en")
             != partial("_partials/aside")
     hr
     != partial("_partials/footer")
+    if chatterli.enabled && current.path[0] == "posts"
+      <script>var chatter_Selector = '#{ chatterli.container }';</script>
+      <script src="https://data.chatter.li/js/vPkIcvIb.js"></script>
