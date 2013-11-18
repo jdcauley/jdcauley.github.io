@@ -8,8 +8,3 @@ if disqus.enabled && current.path[0] == "posts"
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-
-if chatterli.enabled && current.path[0] == "posts"
-  hr
-  <script>var chatter_Selector = '#{ chatterli.container }';</script>
-  <script src="https://data.chatter.li/js/vPkIcvIb.js"></script>
