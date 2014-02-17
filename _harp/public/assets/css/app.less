@@ -2,7 +2,12 @@
 
 /* Variables */
 
+
+@white: #fff;
+@brand-primary: #B95835;
+
 /* Mixins */
+
 .center{
   text-align: center;
   display: block;
@@ -11,6 +16,24 @@
 }
 
 /* Layout */
+header{
+  background: @brand-primary;
+  color: @white;
+  a{
+    color: @white;
+    font-size: 20px;
+    font-weight: 100;
+    &:hover{
+      color: @white;
+      font-weight: 300;
+    }
+  }
+}
+
+.the-header{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .main-content {
   padding-top: 40px;
   padding-bottom: 20px;
@@ -29,17 +52,58 @@ a {
   }
 }
 
-.main {
-  > h2 {
-    margin-top: 50px;
-    border-top: solid 1px #f4f4f4;
-    padding-top: 40px;
-    &:first-child {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
+/* Main */
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Quando', 'Helvetica Neue', Helvetica, Arial;
+}
+
+.simple-nav{
+  ul{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    li{
+      display: inline;
+      a{
+        padding: 10px;
+      }
     }
   }
+}
+
+.img-round{
+  .center;
+  .img-responsive;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.skills{
+  list-style: none;
+  margin-left: 0;
+  font-family: 'Quando', 'Helvetica Neue', Helvetica, Arial;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0;
+}
+.repos{
+  list-style: none;
+  margin-left: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0;
+}
+.divider{
+  border-bottom: 1px solid @brand-primary;
+  padding-bottom: 5px;
+  margin-right: 50%;
+  margin-bottom: 5px;
 }
 
 /* Post */
@@ -89,7 +153,11 @@ body > footer {
     Extra small devices (phones, up to 480px) No media query since this is the default in Bootstrap */
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm) {}
+@media (min-width: @screen-sm) {
+  .container{
+    max-width: 800px;
+  }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md) {}
