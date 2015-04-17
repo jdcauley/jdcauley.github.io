@@ -3,8 +3,8 @@
   "globals": {
     "site_title": "Jordan Cauley's Resume",
     "twitter": "jdcauley",
-    "site_url": "https://jdcauley.github.io",
-    "my_website": "http://jordancauley.com/",
+    "site_url": "",
+    "my_website": "/",
     "disqus": {
       "enabled": false,
       "shortname": ""

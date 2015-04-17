@@ -1,6 +1,71 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0"><channel> <title></title><link>https://jdcauley.github.io/</link><item><title>Hello World</title><link>https://jdcauley.github.io/posts/hello-world</link><description><![CDATA[<h2><a href="/posts/hello-world">Hello World</a></h2><p class="lead">Lorem ipsum Sunt occaecat exercitation quis voluptate tempor</p><p>Lorem ipsum Sunt occaecat exercitation quis voluptate tempor non dolore tempor in dolore deserunt quis non laboris anim non consequat voluptate in sint officia sint mollit esse officia labore labore dolor in ea sed nulla aliqua tempor est velit dolor irure in culpa amet id ea tempor.</p><p><img src="http://placekitten.com/g/500/300" class="img-responsive"/></p><p>Laborum ut aliqua eu fugiat sed laboris consectetur culpa anim deserunt eiusmod esse sunt commodo dolore ex amet irure ut tempor exercitation magna sit voluptate cupidatat adipisicing velit reprehenderit nostrud enim cupidatat id fugiat eu dolor laborum consectetur velit magna laboris incididunt nostrud sint exercitation id aliqua in Duis laboris cillum proident aliqua dolore et incididunt cillum in exercitation id veniam ex Ut dolore quis</p><blockquote><p>Ut adipisicing pariatur officia fugiat culpa cupidatat ullamco sint est commodo est proident ut nostrud consectetur labore anim sint dolor esse pariatur laborum dolor elit irure anim commodo dolore sunt exercitation anim</p><small><a href="#">dolor elit anim</a></small></blockquote>]]></description></item><item><title>Markdown Post</title><link>https://jdcauley.github.io/posts/hello-markdown</link><description><![CDATA[<h2><a href="/posts/hello-markdown">Markdown Post</a></h2>
-<p><strong>This is an example of a post created using markdown.</strong></p>
-<p>Lorem ipsum Id dolor ut est labore esse Duis eiusmod amet amet tempor voluptate commodo non officia consequat Ut in Ut consequat aute laboris eu ex dolor non cupidatat dolore.</p>
-<p>Voluptate sint <strong>consectetur nostrud</strong> dolor mollit incididunt in ut consectetur in enim. Lorem ipsum Id dolor ut est <a href="#">labore esse</a> Duis eiusmod amet amet tempor.</p>
-<p>Boluptate commodo non officia consequat Ut in Ut consequat aute laboris eu ex dolor non cupidatat dolore voluptate sint consectetur nostrud dolor mollit incididunt in ut consectetur in enim.</p>
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0"><channel> <title></title><link>/</link><item><title>Email is an Authenticated Action</title><link>/posts/email-is-an-authenticated-action</link><description><![CDATA[<p><img src="http://placekitten.com/g/500/300" alt="kitten"></p>
+<h4>You already know this but you probably haven&#8217;t thought about it before. Email is an authenticated action.</h4><p>This is a central idea in many online experiences; account activation, password resets, Square Cash, and of course the daily missives you foist upon your colleagues.</p>
+<p>The potential application of email as an authenticated action is much richer. Square Cash touches on the surface of what can be done. From a functional standpoint Square Cash is fairly simple to replicate using services like <a href="http://mandrill.com">Mandrill</a> and <a href="http://stripe.com">Stripe</a>. I built <a href="https://github.com/jdcauley/StripeCash">this</a> proof of concept clone in a few hours.</p>
+<p>I worked on <a href="http://emailgrouper.com/">Email Grouper</a> early on and help build the initial prototype, where the Founder, Trey Miller, coined the term (for us) &quot;Subject Line Commands&quot;. Essentially, simple phrases or prefixes in the subject line changed the action in the application when the email was recieved. Functionally the entire UI was in the use of email.</p>
+<p>The concept of Email as an authenticated action has spread into propietary third party applications through schemes like Oauth. This has created opportunities for Facebook, Twitter and others to become mediums for the exchange of money or the purchase of goods. If your twitter account, email or phone number is associated with an account elsewhere it becomes very simple to turn a simple message into an elegant transaction.</p>
+<p>If we embrace these secondary and external actions in the design and development of applications we have an opportunity to engage with clients, customers or users in new a meaningful ways. Pay a bill with a simple email reply, confirm a ticket purchase with Facebook, bid on Ebay with a tweet.</p>
+<p>What else can we do with external actions?</p>
+]]></description></item><item><title>Getting Started with Gulp.js</title><link>/posts/getting-started-with-gulp</link><description><![CDATA[<p>Building with Gulp.js is a matter of writing a little JavaScript.</p>
+<p>First things first, if you don&#39;t have Node.js ready you&#39;ll need that.</p>
+<p>A visit to <a href="https://www.npmjs.org/">NPM</a> will provide you with plenty of
+Gulp plugins ready to work with.</p>
+<p>If your working on a project that doesn&#39;t have any previous Node
+integration you&#39;ll need to create your package.json.</p>
+<pre><code>npm init
+</code></pre><p>And now we have a package.json</p>
+<p>So you can add Gulp to the project with:</p>
+<pre><code>npm install gulp --save-dev
+</code></pre><p>But in order to use it you&#39;ll need to do a global install.</p>
+<pre><code>npm install -g gulp
+</code></pre><p>Pick some tasks and define them.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var watch = require(&#39;gulp-watch&#39;); // Better Watch
+var path = require(&#39;path&#39;); // Needed for Less
+var less = require(&#39;gulp-less&#39;);
+var autoprefixer = require(&#39;gulp-autoprefixer&#39;);
+var minify = require(&#39;gulp-minify-css&#39;);
+var jshint = require(&#39;gulp-jshint&#39;);
+var stylish = require(&#39;jshint-stylish&#39;);
+var uglify = require(&#39;gulp-uglify&#39;),
+var concat = require(&#39;gulp-concat&#39;),
+</code></pre><p>Define a Task:</p>
+<pre><code>gulp.task(&#39;css&#39;, function(){
+
+});
+</code></pre><p>Get your source and pipe your actions.</p>
+<pre><code>gulp.task(&#39;css&#39;, function(){
+
+    gulp.src(&#39;assets/less/main.less&#39;)
+    .pipe(less({
+      paths: [path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+    }))
+    .pipe(autoprefixer({
+      browsers: [&#39;last 2 versions&#39;],
+      cascade: false
+    }))
+    .pipe(gulp.dest(&#39;assets/css&#39;));
+
+});
+</code></pre><p>Set a default task</p>
+<pre><code>gulp.task(&#39;default&#39;, function(){
+  gulp.watch(&#39;assets/less/*.less&#39;, [&#39;less&#39;]);
+  gulp.watch(&#39;assets/**/*.js&#39;, [&#39;js&#39;]);
+});
+</code></pre>]]></description></item><item><title>Anchor vs. Ghost</title><link>/posts/anchor-v-ghost</link><description><![CDATA[<p>Fundamentally Ghost and AnchorCMS are very similar. Both are writing focused platforms aimed at blogging. Both favor markdown over WYSIWYG editors and both are modern versions of what WordPress once was.</p>
+<p>WordPress has become the internets shotgun, a catch all often used for purposes well beyond its original purpose. At its core WordPress is a blogging platform, now its a CMS tack on top of a blogging platform. As a result several potential usurpers have arrived on the scene.</p>
+<p>Ghost and Anchor are just two options for blogging platforms. I find Harp.js and its hosted version Harp.io an excellent choice for a static site generator and blog. I currently host this site with Harp.io and host a back up on Github.</p>
+<p>For many users, static site generators are intimidating. So if you want something new, you have a more limited set of choices.</p>
+<p>Ghost or AnchorCMS</p>
+<h4>AnchorCMS.</h4><p>AnchorCMS is an Open Source php powered blogging platform, significantly lighter than WordPress with many of the same features. Posts are written in Markdown or HTML allowing for Art Directed Posts.</p>
+<p>This biggest advantage of AnchorCMS and the fact that it is written in PHP is how easy it is to find hosting and get up and running. Virtually any hosting provider supports AnchorCMS and getting it installed merely requires a new database.</p>
+<p>AnchorCMS is much further along in development than Ghost, nearing a 1.0 and includes custom fields, feature images and many of the other perks of a CMS that has had more time in the oven.</p>
+<p>Templating is simple and uses relatively simple php. The theme structure is concise and easy to organize and there are a growing number of themes to choose from at Anchor Themes (Including mine, Ancora recently updated to Bootstrap 3.0).</p>
+<p>The only thing, Anchor is missing (but is currently in development) is a media manager for managing asset files.</p>
+<h4>Ghost</h4><p>Ghost is the other contender to unseat WordPress&#39; blogging dominance. Like AnchorCMS, Ghost offers a Markdown editing, simple and streamlined user interface but lacks the potential for Art Directed Posts.</p>
+<p>Ghost gained substatial internet fame with its successful Kickstarter Campaign. It was released for download in mid-October to much fanfare. One click installers for sever VPS services including Digital Ocean popped up making it more accessible than was anticipated due to Ghost&#39;s Node.js backend.</p>
+<p>Templating is done with Handlebars and is easy to use for anyone who has written a WordPress themes.</p>
+<p>Ghost is very early in development and lacks a number of features, including media management, custom fields and even static pages. Many of these items are included in the roadmap.</p>
+<p>Unfortunately for AnchorCMS, Ghost has one advantage, while sparse the Ghost user experience has been excellent.</p>
+<p>So Pick One</p>
+<p>Or don&#39;t but either way its time to move past WordPress. There are a ton of options include some excellent static site generators like Harp.js and I can promise the Blog boilerplate will keep getting better. As soon as I have a little time to knock out some more updates.</p>
 ]]></description></item></channel></rss>
