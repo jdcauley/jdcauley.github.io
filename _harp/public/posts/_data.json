@@ -1,8 +1,17 @@
 {
-  "hello-world": {
-    "title": "Hello World"
-  },
-  "hello-markdown": {
-    "title": "Markdown Post"
-  }
+    "email-is-an-authenticated-action": {
+      "title": "Email is an Authenticated Action",
+      "author": "Jordan",
+      "date": "February 11, 2015"
+    },
+    "getting-started-with-gulp": {
+      "title": "Getting Started with Gulp.js",
+      "author": "Jordan",
+      "date": "November 8th, 2014"
+    },
+    "anchor-v-ghost": {
+      "title": "Anchor vs. Ghost",
+      "author": "Jordan",
+      "date": "January 10, 2014"
+    }
 }

@@ -5,16 +5,36 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title #{ site_title }
     link(rel="stylesheet", href="/assets/css/app.css")
-    script(src="#{ site_url }/assets/js/dug.js").
-    link(href='http://fonts.googleapis.com/css?family=Quando', rel='stylesheet', type='text/css')
-    link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
-  body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
-    header
-      != partial("_partials/header")
-    != yield
 
-    hr
-    != partial("_partials/footer")
+    link(href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css')
+    link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
+  body(class="wrap page-#{ current.path[0] } #{ current.path.join('-') }")
+      
+    .container-fluid.primary
+      .row-fluid.primary
+        main.col-sm-7.main
+          .main-inner
+            if current.path[0] === "posts"
+              != partial("_partials/post-wrap", { yield: yield })
+            else
+              != yield
+          
+        .col-sm-5.ocean
+          .ocean-inner
+            h2
+              a.title(href="/") Jordan Cauley
+              
+            .header
+              != partial("_partials/header")
+            
+            p Hello, my name is Jordan Cauley. I'm an experienced web developer with experience in Full Stack applications development and Front end Engineering.
+            
+            nav.post-nav
+              h4 Recent Posts
+              ul
+                each post, slug in public.posts._data
+                  li.recent-posts
+                    a(href="#{ site_url }/posts/#{ slug }") #{ post.title } 
+
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
-    script(src="#{ site_url }/assets/bootstrap.min.js").
-    script(src="#{ site_url }/assets/js/app.js").
+    script(src="/assets/js/app.js").

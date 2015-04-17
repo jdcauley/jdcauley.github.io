@@ -1,14 +1,71 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Jordan Cauley's Resume</title><link rel="stylesheet" href="/assets/css/app.css"><script src="https://jdcauley.github.io/assets/js/dug.js"></script><link href="http://fonts.googleapis.com/css?family=Quando" rel="stylesheet" type="text/css"><link rel="alternate" type="application/rss+xml" title="Jordan Cauley's Resume RSS" href="/rss.xml"></head><body class="page-index index"><header><nav class="simple-nav"><ul><li><a href="http://github.com/jdcauley">github</a></li><li><a href="http://twitter.com/jdcauley">twitter</a></li><li><a href="http://jordancauley.com">jordancauley.com</a></li></ul></nav><div class="container the-header"><div class="row"><div class="col-sm-4"><img src="https://jdcauley.github.io/assets/images/me.jpg" class="img-round"/></div><div class="col-sm-8"><h1>Hello, my name is Jordan Cauley</h1><h4>I'm Front End Developer teaching myself to be a Full Stack Engineer</h4><p>Last year I launched more than 40 websites serving three continents. Most of my work is for area agencies. I am currently learning backdend development using Node.js.</p></div></div></div></header><div class="container"><div class="row"><div class="col-sm-12"><h2>Freelance</h2><p>Over the last 18 months I have been worked full time as a freelance Front End Developer for a variety of agencies in the Triad. In that time I've honed my skills in HTML5, CSS, Responsive Development, Javascript and more. I've move from working as WordPress developer to working on front end projects for a variety of platforms and web applications.</p><h2>Previous Experience</h2><p>Since 2008 I have built increasingly complex web sites for small business, political campaigns and non-profits. I have a degree in Political Science from East Carolina University with additional education in video and audio production. I have worked for in legal, medical and small business environments.</p><form action="https://plstc.co/charge/4kM26RPx" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js"
-    class="stripe-button"
-    data-key="pk_live_JqOsEW6DR21GB8iEsvXvTTAM"
-    data-image="https://www.gravatar.com/avatar/ede3be53c3649afc4c0881c6713645f2.jpg?s=200"
-    data-name="Simple Test"
-    data-description="<!--Your Description-->"
-    data-amount="100">
-  </script>
-  
-  <!-- If you want to use Checkout you should include a redirect -->
-    <input type="hidden" name="redirect" value="">
-</form></div></div><div class="row"><div class="col-sm-4"><h3>Skills</h3><ul class="skills"><li>HTML5</li><li>CSS3</li><li>Sails.js</li><li>Node.js</li><li>Less</li><li>Stylus</li><li class="divider"></li><li>VPS Setup and management</li><li>Command line tools</li><li>Nginx</li><li class="divider"></li><li>WordPress</li><li>Harp.js</li><li>Ghost</li><li>Anchor CMS</li><li>Shopify</li><li>Yii</li></ul><h3>Learned in 2013</h3><ul class="skills"><li>Less</li><li>Stylus</li><li>Sails.js</li><li>Jade</li><li>Cmd Line Tools</li><li>Git</li><li>Grunt.js</li><li>Gulp.js</li></ul></div><div class="col-sm-8"><h3>Github Repos</h3><div id="github"></div></div></div></div><hr><footer><div class="container"><div class="row"><div class="col-sm-6"><p><small>&copy; 2013 Jordan Cauley's Resume</small></p></div><div class="col-sm-6"><p class="pull-right"><small><a href="/rss.xml" title="Jordan Cauley's Resume RSS feed"><img src="/assets/images/feed-icon.png" class="rss-feed"/> RSS feed</a></small></p></div></div></div></footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><script src="https://jdcauley.github.io/assets/bootstrap.min.js"></script><script src="https://jdcauley.github.io/assets/js/app.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Jordan Cauley's Resume</title><link rel="stylesheet" href="/assets/css/app.css"><link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css"><link rel="alternate" type="application/rss+xml" title="Jordan Cauley's Resume RSS" href="/rss.xml"></head><body class="wrap page-index index"><div class="container-fluid primary"><div class="row-fluid primary"><main class="col-sm-7 main"><div class="main-inner"><article class="article"><div class="meta"><h2><a href="/posts/email-is-an-authenticated-action">Email is an Authenticated Action</a></h2><time>February 11, 2015</time></div><p><img src="http://placekitten.com/g/500/300" alt="kitten"></p>
+<h4>You already know this but you probably haven&#8217;t thought about it before. Email is an authenticated action.</h4><p>This is a central idea in many online experiences; account activation, password resets, Square Cash, and of course the daily missives you foist upon your colleagues.</p>
+<p>The potential application of email as an authenticated action is much richer. Square Cash touches on the surface of what can be done. From a functional standpoint Square Cash is fairly simple to replicate using services like <a href="http://mandrill.com">Mandrill</a> and <a href="http://stripe.com">Stripe</a>. I built <a href="https://github.com/jdcauley/StripeCash">this</a> proof of concept clone in a few hours.</p>
+<p>I worked on <a href="http://emailgrouper.com/">Email Grouper</a> early on and help build the initial prototype, where the Founder, Trey Miller, coined the term (for us) &quot;Subject Line Commands&quot;. Essentially, simple phrases or prefixes in the subject line changed the action in the application when the email was recieved. Functionally the entire UI was in the use of email.</p>
+<p>The concept of Email as an authenticated action has spread into propietary third party applications through schemes like Oauth. This has created opportunities for Facebook, Twitter and others to become mediums for the exchange of money or the purchase of goods. If your twitter account, email or phone number is associated with an account elsewhere it becomes very simple to turn a simple message into an elegant transaction.</p>
+<p>If we embrace these secondary and external actions in the design and development of applications we have an opportunity to engage with clients, customers or users in new a meaningful ways. Pay a bill with a simple email reply, confirm a ticket purchase with Facebook, bid on Ebay with a tweet.</p>
+<p>What else can we do with external actions?</p>
+</article><article class="article"><div class="meta"><h2><a href="/posts/getting-started-with-gulp">Getting Started with Gulp.js</a></h2><time>November 8th, 2014</time></div><p>Building with Gulp.js is a matter of writing a little JavaScript.</p>
+<p>First things first, if you don&#39;t have Node.js ready you&#39;ll need that.</p>
+<p>A visit to <a href="https://www.npmjs.org/">NPM</a> will provide you with plenty of
+Gulp plugins ready to work with.</p>
+<p>If your working on a project that doesn&#39;t have any previous Node
+integration you&#39;ll need to create your package.json.</p>
+<pre><code>npm init
+</code></pre><p>And now we have a package.json</p>
+<p>So you can add Gulp to the project with:</p>
+<pre><code>npm install gulp --save-dev
+</code></pre><p>But in order to use it you&#39;ll need to do a global install.</p>
+<pre><code>npm install -g gulp
+</code></pre><p>Pick some tasks and define them.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var watch = require(&#39;gulp-watch&#39;); // Better Watch
+var path = require(&#39;path&#39;); // Needed for Less
+var less = require(&#39;gulp-less&#39;);
+var autoprefixer = require(&#39;gulp-autoprefixer&#39;);
+var minify = require(&#39;gulp-minify-css&#39;);
+var jshint = require(&#39;gulp-jshint&#39;);
+var stylish = require(&#39;jshint-stylish&#39;);
+var uglify = require(&#39;gulp-uglify&#39;),
+var concat = require(&#39;gulp-concat&#39;),
+</code></pre><p>Define a Task:</p>
+<pre><code>gulp.task(&#39;css&#39;, function(){
+
+});
+</code></pre><p>Get your source and pipe your actions.</p>
+<pre><code>gulp.task(&#39;css&#39;, function(){
+
+    gulp.src(&#39;assets/less/main.less&#39;)
+    .pipe(less({
+      paths: [path.join(__dirname, &#39;less&#39;, &#39;includes&#39;) ]
+    }))
+    .pipe(autoprefixer({
+      browsers: [&#39;last 2 versions&#39;],
+      cascade: false
+    }))
+    .pipe(gulp.dest(&#39;assets/css&#39;));
+
+});
+</code></pre><p>Set a default task</p>
+<pre><code>gulp.task(&#39;default&#39;, function(){
+  gulp.watch(&#39;assets/less/*.less&#39;, [&#39;less&#39;]);
+  gulp.watch(&#39;assets/**/*.js&#39;, [&#39;js&#39;]);
+});
+</code></pre></article><article class="article"><div class="meta"><h2><a href="/posts/anchor-v-ghost">Anchor vs. Ghost</a></h2><time>January 10, 2014</time></div><p>Fundamentally Ghost and AnchorCMS are very similar. Both are writing focused platforms aimed at blogging. Both favor markdown over WYSIWYG editors and both are modern versions of what WordPress once was.</p>
+<p>WordPress has become the internets shotgun, a catch all often used for purposes well beyond its original purpose. At its core WordPress is a blogging platform, now its a CMS tack on top of a blogging platform. As a result several potential usurpers have arrived on the scene.</p>
+<p>Ghost and Anchor are just two options for blogging platforms. I find Harp.js and its hosted version Harp.io an excellent choice for a static site generator and blog. I currently host this site with Harp.io and host a back up on Github.</p>
+<p>For many users, static site generators are intimidating. So if you want something new, you have a more limited set of choices.</p>
+<p>Ghost or AnchorCMS</p>
+<h4>AnchorCMS.</h4><p>AnchorCMS is an Open Source php powered blogging platform, significantly lighter than WordPress with many of the same features. Posts are written in Markdown or HTML allowing for Art Directed Posts.</p>
+<p>This biggest advantage of AnchorCMS and the fact that it is written in PHP is how easy it is to find hosting and get up and running. Virtually any hosting provider supports AnchorCMS and getting it installed merely requires a new database.</p>
+<p>AnchorCMS is much further along in development than Ghost, nearing a 1.0 and includes custom fields, feature images and many of the other perks of a CMS that has had more time in the oven.</p>
+<p>Templating is simple and uses relatively simple php. The theme structure is concise and easy to organize and there are a growing number of themes to choose from at Anchor Themes (Including mine, Ancora recently updated to Bootstrap 3.0).</p>
+<p>The only thing, Anchor is missing (but is currently in development) is a media manager for managing asset files.</p>
+<h4>Ghost</h4><p>Ghost is the other contender to unseat WordPress&#39; blogging dominance. Like AnchorCMS, Ghost offers a Markdown editing, simple and streamlined user interface but lacks the potential for Art Directed Posts.</p>
+<p>Ghost gained substatial internet fame with its successful Kickstarter Campaign. It was released for download in mid-October to much fanfare. One click installers for sever VPS services including Digital Ocean popped up making it more accessible than was anticipated due to Ghost&#39;s Node.js backend.</p>
+<p>Templating is done with Handlebars and is easy to use for anyone who has written a WordPress themes.</p>
+<p>Ghost is very early in development and lacks a number of features, including media management, custom fields and even static pages. Many of these items are included in the roadmap.</p>
+<p>Unfortunately for AnchorCMS, Ghost has one advantage, while sparse the Ghost user experience has been excellent.</p>
+<p>So Pick One</p>
+<p>Or don&#39;t but either way its time to move past WordPress. There are a ton of options include some excellent static site generators like Harp.js and I can promise the Blog boilerplate will keep getting better. As soon as I have a little time to knock out some more updates.</p>
+</article></div></main><div class="col-sm-5 ocean"><div class="ocean-inner"><h2><a href="/" class="title">Jordan Cauley</a></h2><div class="header"><nav class="main-nav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="https://github.com/jdcauley">GitHub</a></li><li><a href="https://plstc.co">Plstc.co</a></li><li><a href="https://git.works">Git.Works</a></li></ul></nav></div><p>Hello, my name is Jordan Cauley. I'm an experienced web developer with experience in Full Stack applications development and Front end Engineering.</p><nav class="post-nav"><h4>Recent Posts</h4><ul><li class="recent-posts"><a href="/posts/email-is-an-authenticated-action">Email is an Authenticated Action </a></li><li class="recent-posts"><a href="/posts/getting-started-with-gulp">Getting Started with Gulp.js </a></li><li class="recent-posts"><a href="/posts/anchor-v-ghost">Anchor vs. Ghost </a></li></ul></nav></div></div></div></div><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><script src="/assets/js/app.js"></script></body></html>

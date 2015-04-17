@@ -1,46 +1,7 @@
-.container
-  .row
-    .col-sm-12
-      h2 Freelance
-      p Over the last 18 months I have been worked full time as a freelance Front End Developer for a variety of agencies in the Triad. In that time I've honed my skills in HTML5, CSS, Responsive Development, Javascript and more. I've move from working as WordPress developer to working on front end projects for a variety of platforms and web applications.
-
-      h2 Previous Experience
-      p Since 2008 I have built increasingly complex web sites for small business, political campaigns and non-profits. I have a degree in Political Science from East Carolina University with additional education in video and audio production. I have worked for in legal, medical and small business environments.
-
-
-  .row
-    .col-sm-4
-      h3 Skills
-      ul.skills
-        li HTML5
-        li CSS3
-        li Sails.js
-        li Node.js
-        li Less
-        li Stylus
-        li.divider
-        li VPS Setup and management
-        li Command line tools
-        li Nginx
-        li.divider
-        li WordPress
-        li Harp.js
-        li Ghost
-        li Anchor CMS
-        li Shopify
-        li Yii
-
-      h3 Learned in 2013
-      ul.skills
-        li Less
-        li Stylus
-        li Sails.js
-        li Jade
-        li Cmd Line Tools
-        li Git
-        li Grunt.js
-        li Gulp.js
-
-    .col-sm-8
-      h3 Github Repos
-      #github
+each post, slug in public.posts._data
+  article.article
+    .meta
+      h2
+        a(href="#{ site_url }/posts/#{ slug }") #{ post.title }
+      time #{ post.date }
+    !{ partial("posts/" + slug) }
